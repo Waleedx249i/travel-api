@@ -180,6 +180,7 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
+    Cviebrock\EloquentSluggable\Services\SlugService::class,
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,

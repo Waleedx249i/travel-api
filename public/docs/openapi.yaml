@@ -1,0 +1,432 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/admin/travels:
+    post:
+      summary: "Store a newly created travel in storage.\n @apiResource App\\Http\\Resources\\TravelResource"
+      operationId: storeANewlyCreatedTravelInStorageapiResourceAppHttpResourcesTravelResource
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Admin Routs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_public:
+                  type: boolean
+                  description: ''
+                  example: true
+                name:
+                  type: string
+                  description: ''
+                  example: recusandae
+                description:
+                  type: string
+                  description: ''
+                  example: eligendi
+                number_of_days:
+                  type: integer
+                  description: ''
+                  example: 11
+              required:
+                - name
+                - description
+                - number_of_days
+  '/api/v1/admin/travels/{travel_id}/tours':
+    post:
+      summary: 'Store a newly created tour in storage py admin.'
+      operationId: storeANewlyCreatedTourInStoragePyAdmin
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    name: 'Karina Tillman V'
+                    starting_date: '2023-11-26T09:20:56.344066Z'
+                    ending_date: '2023-12-12T09:20:56.344087Z'
+                    price: '13.58'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: null
+                      name:
+                        type: string
+                        example: 'Karina Tillman V'
+                      starting_date:
+                        type: string
+                        example: '2023-11-26T09:20:56.344066Z'
+                      ending_date:
+                        type: string
+                        example: '2023-12-12T09:20:56.344087Z'
+                      price:
+                        type: string
+                        example: '13.58'
+      tags:
+        - 'Admin Routs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: hic
+                starting_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2023-11-26T09:20:56'
+                ending_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after <code>starting_date</code>.'
+                  example: '2075-05-18'
+                price:
+                  type: number
+                  description: ''
+                  example: 71308950.360363
+              required:
+                - name
+                - starting_date
+                - ending_date
+                - price
+    parameters:
+      -
+        in: path
+        name: travel_id
+        description: 'The ID of the travel.'
+        example: reprehenderit
+        required: true
+        schema:
+          type: string
+  '/api/v1/admin/travels/{travel_id}':
+    put:
+      summary: 'Update the Travel'
+      operationId: updateTheTravel
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 9ab44531-1b14-4f06-929d-22fbd85222d1
+                    name: Quam.
+                    slug: quam
+                    description: 'Error non esse aliquam aut. Placeat at est cupiditate error sunt vero. Quisquam ad aperiam et sint.'
+                    number_of_days: 6
+                    number_of_nigths: 5
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 9ab44531-1b14-4f06-929d-22fbd85222d1
+                      name:
+                        type: string
+                        example: Quam.
+                      slug:
+                        type: string
+                        example: quam
+                      description:
+                        type: string
+                        example: 'Error non esse aliquam aut. Placeat at est cupiditate error sunt vero. Quisquam ad aperiam et sint.'
+                      number_of_days:
+                        type: integer
+                        example: 6
+                      number_of_nigths:
+                        type: integer
+                        example: 5
+      tags:
+        - 'Auth Routs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_public:
+                  type: boolean
+                  description: ''
+                  example: false
+                name:
+                  type: string
+                  description: ''
+                  example: et
+                description:
+                  type: string
+                  description: ''
+                  example: ducimus
+                number_of_days:
+                  type: integer
+                  description: ''
+                  example: 11
+              required:
+                - name
+                - description
+                - number_of_days
+    parameters:
+      -
+        in: path
+        name: travel_id
+        description: 'The ID of the travel.'
+        example: natus
+        required: true
+        schema:
+          type: string
+  /api/v1/login:
+    post:
+      summary: ''
+      operationId: postApiV1Login
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "['access_token' => '86d7266ac0c0bf6850a3d2e69b9aa1c084c0984acda68e2fe8f093236aee9694']"
+      tags:
+        - 'User Login'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: phoebe.turcotte@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: 'iPeTNG]dc.66i'
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/travels:
+    get:
+      summary: 'Display a listing of the public travels.'
+      operationId: displayAListingOfThePublicTravels
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 9ab44530-7db4-414b-9cca-f763abe33a37
+                      name: Ducimus.
+                      slug: ducimus
+                      description: 'Sit sit earum perferendis. Iure quis deleniti mollitia.'
+                      number_of_days: 4
+                      number_of_nigths: 3
+                    -
+                      id: 9ab44530-88f0-47ae-9fdd-79a55e1a108e
+                      name: Doloribus.
+                      slug: doloribus
+                      description: 'Facilis velit nesciunt dolor. Consequuntur et repellat rem. Accusamus ab amet eos commodi.'
+                      number_of_days: 4
+                      number_of_nigths: 3
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 9ab44530-7db4-414b-9cca-f763abe33a37
+                        name: Ducimus.
+                        slug: ducimus
+                        description: 'Sit sit earum perferendis. Iure quis deleniti mollitia.'
+                        number_of_days: 4
+                        number_of_nigths: 3
+                      -
+                        id: 9ab44530-88f0-47ae-9fdd-79a55e1a108e
+                        name: Doloribus.
+                        slug: doloribus
+                        description: 'Facilis velit nesciunt dolor. Consequuntur et repellat rem. Accusamus ab amet eos commodi.'
+                        number_of_days: 4
+                        number_of_nigths: 3
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 9ab44530-7db4-414b-9cca-f763abe33a37
+                        name:
+                          type: string
+                          example: Ducimus.
+                        slug:
+                          type: string
+                          example: ducimus
+                        description:
+                          type: string
+                          example: 'Sit sit earum perferendis. Iure quis deleniti mollitia.'
+                        number_of_days:
+                          type: integer
+                          example: 4
+                        number_of_nigths:
+                          type: integer
+                          example: 3
+      tags:
+        - 'public Routs'
+      security: []
+  '/api/v1/travels/{travel_slug}/tours':
+    get:
+      summary: 'Display a listing of the tours filtring py date and price'
+      operationId: displayAListingOfTheToursFiltringPyDateAndPrice
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      name: 'Dr. Quinton Marks I'
+                      starting_date: '2023-11-26T09:20:56.236556Z'
+                      ending_date: '2023-12-13T09:20:56.236577Z'
+                      price: '917.00'
+                    -
+                      id: null
+                      name: 'Marian Vandervort'
+                      starting_date: '2023-11-26T09:20:56.245610Z'
+                      ending_date: '2023-11-30T09:20:56.245633Z'
+                      price: '575.30'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        name: 'Dr. Quinton Marks I'
+                        starting_date: '2023-11-26T09:20:56.236556Z'
+                        ending_date: '2023-12-13T09:20:56.236577Z'
+                        price: '917.00'
+                      -
+                        id: null
+                        name: 'Marian Vandervort'
+                        starting_date: '2023-11-26T09:20:56.245610Z'
+                        ending_date: '2023-11-30T09:20:56.245633Z'
+                        price: '575.30'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: null
+                        name:
+                          type: string
+                          example: 'Dr. Quinton Marks I'
+                        starting_date:
+                          type: string
+                          example: '2023-11-26T09:20:56.236556Z'
+                        ending_date:
+                          type: string
+                          example: '2023-12-13T09:20:56.236577Z'
+                        price:
+                          type: string
+                          example: '917.00'
+      tags:
+        - 'public Routs'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                priceFrom:
+                  type: number
+                  description: ''
+                  example: 201095877.5
+                priceTo:
+                  type: number
+                  description: ''
+                  example: 639.9
+                dateFrom:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2023-11-26T09:20:56'
+                dateTo:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2023-11-26T09:20:56'
+                sortBy:
+                  type: string
+                  description: ''
+                  example: price
+                  enum:
+                    - price
+                sortOrder:
+                  type: string
+                  description: ''
+                  example: asc
+                  enum:
+                    - asc
+                    - desc
+      security: []
+    parameters:
+      -
+        in: path
+        name: travel_slug
+        description: 'The slug of the travel.'
+        example: id
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: 'Admin Routs'
+    description: ''
+  -
+    name: 'Auth Routs'
+    description: ''
+  -
+    name: 'User Login'
+    description: ''
+  -
+    name: 'public Routs'
+    description: ''

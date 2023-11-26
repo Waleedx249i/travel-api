@@ -1,0 +1,148 @@
+name: 'public Routs'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/travels
+    metadata:
+      groupName: 'public Routs'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the public travels.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":"9ab44c93-7ef2-49c7-b3d5-dc1b55a5628c","name":"Numquam.","slug":"numquam","description":"Quas veritatis id et qui non voluptatibus explicabo ex. Rerum in qui quae provident.","number_of_days":5,"number_of_nigths":4},{"id":"9ab44c93-90d5-4526-883c-da808925ba8b","name":"Optio.","slug":"optio","description":"Sit harum sed voluptatum minus. Ad aperiam consequuntur repudiandae rerum aspernatur laboriosam.","number_of_days":2,"number_of_nigths":1}]}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/travels/{travel_slug}/tours'
+    metadata:
+      groupName: 'public Routs'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the tours filtring py date and price'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      travel_slug:
+        name: travel_slug
+        description: 'The slug of the travel.'
+        required: true
+        example: fuga
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      travel_slug: fuga
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      priceFrom:
+        name: priceFrom
+        description: ''
+        required: false
+        example: 1807.548
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      priceTo:
+        name: priceTo
+        description: ''
+        required: false
+        example: 1358765.37
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      dateFrom:
+        name: dateFrom
+        description: 'Must be a valid date.'
+        required: false
+        example: '2023-11-26T09:41:35'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      dateTo:
+        name: dateTo
+        description: 'Must be a valid date.'
+        required: false
+        example: '2023-11-26T09:41:35'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      sortBy:
+        name: sortBy
+        description: ''
+        required: false
+        example: price
+        type: string
+        enumValues:
+          - price
+        exampleWasSpecified: false
+        custom: []
+      sortOrder:
+        name: sortOrder
+        description: ''
+        required: false
+        example: desc
+        type: string
+        enumValues:
+          - asc
+          - desc
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      priceFrom: 1807.548
+      priceTo: 1358765.37
+      dateFrom: '2023-11-26T09:41:35'
+      dateTo: '2023-11-26T09:41:35'
+      sortBy: price
+      sortOrder: desc
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":null,"name":"Janiya Green","starting_date":"2023-11-26T09:41:35.559969Z","ending_date":"2023-12-08T09:41:35.559995Z","price":"197.56"},{"id":null,"name":"Dr. Justus Schuster","starting_date":"2023-11-26T09:41:35.564566Z","ending_date":"2023-12-09T09:41:35.564587Z","price":"365.99"}]}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
